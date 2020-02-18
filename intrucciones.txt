@@ -1,3 +1,1 @@
-CONFIGURAR CREDENCIALES DE USUARIO
-$git config --global user.name "david"
-$git config --global user.email "andresdamaya02@gmail.com"
+horario de clases
