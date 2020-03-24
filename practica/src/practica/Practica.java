@@ -16,6 +16,16 @@ public class Practica {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int i=0;
+        for (i=0;i<=10;i++){
+            System.out.println(i);        
+        }
+        System.out.println("······························");
+        for(i=1;i<=10;i++){
+            System.out.println(i); 
+        }
+                      
     }
+    
     
 }
