@@ -196,6 +196,7 @@ public class InfoUsers extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //
         String num1="",num2="";
         
         num1=n1.getText();
@@ -204,7 +205,7 @@ public class InfoUsers extends javax.swing.JFrame {
         jButton1.setText(num1);
         jButton1.setText(num2);
         
-        
+        //consola
         System.out.println("###los numeros ingresados son:  ");
         System.out.println("N1: "+ n1.getText());
         System.out.println("N2: "+ n2.getText());
