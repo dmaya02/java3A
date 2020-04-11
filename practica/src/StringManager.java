@@ -311,6 +311,10 @@ public class StringManager extends javax.swing.JFrame {
         String yName = txtName.getText();
         System.out.println("Your name is:"+yName);
         lblName.setText(yName);
+        lblMay.setText(yName);
+        lblMin.setText(yName);
+        lblTotal.setText(yName);
+        lblInitial.setText(yName);
         
     }//GEN-LAST:event_btnShowActionPerformed
 
@@ -380,4 +384,8 @@ public class StringManager extends javax.swing.JFrame {
     private javax.swing.JLabel lblTotal;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+    private String toUpperCase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
