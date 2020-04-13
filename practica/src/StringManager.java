@@ -1,8 +1,3 @@
-
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.WARNING_MESSAGE;
-
-
 public class StringManager extends javax.swing.JFrame {
 String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
  int contador=0,conspa=0,fin=0,buscar=0,i;
@@ -10,29 +5,25 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
  char Letra=' ',letra=Letra,may=' ';
  int letrainicial=0,x=0;
  char Buscarletra [];
-
  
     public StringManager() {
-        initComponents();
-        setLocationRelativeTo(null);
-        btnIngles.setEnabled(false);
-        btnMay.setEnabled(false);  
-        btnMin.setEnabled(false);  
-        btnReset.setEnabled(false);  
-        btnSearch.setEnabled(false);  
-        btnShow.setEnabled(false);
+      initComponents();
+      setLocationRelativeTo(null);
+      btnIngles.setEnabled(false);
+      btnMay.setEnabled(false);  
+      btnMin.setEnabled(false);  
+      btnReset.setEnabled(false);  
+      btnSearch.setEnabled(false);  
+      btnShow.setEnabled(false);
     }
-
     public void Botones(){
     if (!txtName.getText().isEmpty()){  
       btnReset.setEnabled(true);  
       btnSearch.setEnabled(true);  
       btnShow.setEnabled(true);
       btnMay.setEnabled(false);  
-      btnMin.setEnabled(false);
-      
-    }else{
-        
+      btnMin.setEnabled(false); 
+    }else{ 
       btnReset.setEnabled(false);  
       btnSearch.setEnabled(false);  
       btnShow.setEnabled(false);  
@@ -54,8 +45,7 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
              letra=Character.toLowerCase(letra);
            }
            if(letrainicial==i){
-             letra=Character.toUpperCase(letra);
-             
+             letra=Character.toUpperCase(letra);        
            }
            contador++;
            Completo+=letra;
@@ -63,19 +53,16 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
        fin=contador;
        return Completo;  
     }
-
      public String buscar(String palabra){
-    
     Buscarletra = Nombre.toCharArray();
     for ( x=1;x<Nombre.length();x++){
         if((letrabuscar-1)==x){
         Character.toString(Buscarletra [x]);
         letraf=Integer.toString(Buscarletra [x]);
-        
         }
         }
     letraf+=letra;
-    return letraf; // TODO code application logic here
+    return letraf; 
     }
        
     @SuppressWarnings("unchecked")
@@ -112,7 +99,7 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("String Manager");
         setBackground(new java.awt.Color(0, 0, 255));
-        setPreferredSize(new java.awt.Dimension(485, 650));
+        setPreferredSize(new java.awt.Dimension(500, 650));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 255));
@@ -276,7 +263,7 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
                     .addComponent(lblTitulo2)
                     .addComponent(txtBuscar)
                     .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
                 .addComponent(lblLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,17 +382,16 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
+    Botones();
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {                                             
     Botones();
     }
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
-
-        //code ofshow username by console
-     txtName.setText(""); 
+    Botones();
      if (!txtName.getText().isEmpty()){
-      Nombre=txtName.getText();
+     Nombre=txtName.getText();
      lblName.setText(Nombre);
      String Mayus = Nombre.toUpperCase();
      lblMay.setText(Mayus);
@@ -427,23 +413,11 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
     }//GEN-LAST:event_btnShowActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        
         txtName.setText("");
         Botones();
-        Nombre="";
-        Mayus="";
-        Minus="";Completo=Nombre;
-        letraf="";
-        contador=0;
-        conspa=0;
-        fin=0;
-        buscar=0;
-        i=0;
-        letrabuscar=0;
-        Letra=' ';
-        letra=Letra;
-        may=' ';
-        letrainicial=0;
+        Nombre=""; Mayus="";Minus="";Completo=Nombre;letraf="";contador=0;conspa=0;fin=0;buscar=0;
+        i=0;letrabuscar=0;Letra=' ';
+        letra=Letra;may=' ';letrainicial=0;
         x=0;     
         lblName.setText("");
         lblMay.setText("");
@@ -452,21 +426,20 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
         lblInitial.setText("");
         lblLetra.setText("?");
         txtBuscar.setText("");
-
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnMayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMayActionPerformed
         // TODO add your handling code here:
-         if (Buscarletra [(letrabuscar-1)]==' '){
+        if (Buscarletra [(letrabuscar-1)]==' '){
         lblLetra.setText("_");
         btnMin.setEnabled(false);
         btnMay.setEnabled(false);       
-         }else{
+        }else{
         String M = letraf.toUpperCase();
         lblLetra.setText(M);
         btnMay.setEnabled(false);
         btnMin.setEnabled(true);
-         }
+        }
     }//GEN-LAST:event_btnMayActionPerformed
 
     private void btnEspañolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspañolActionPerformed
@@ -482,8 +455,7 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
         btnReset.setText("REINICIAR");
         btnSearch.setText("BUSCAR");
         btnEspañol.setEnabled(false);
-        btnIngles.setEnabled(true);
-                                       
+        btnIngles.setEnabled(true);                                       
     }//GEN-LAST:event_btnEspañolActionPerformed
 
     private void btnMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinActionPerformed
@@ -501,9 +473,8 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
     }//GEN-LAST:event_btnMinActionPerformed
 
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
 
+    }//GEN-LAST:event_txtBuscarActionPerformed
     private void btnInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInglesActionPerformed
         lblTitulo1.setText("Your name:");
         lbl1.setText("Your name is:");
@@ -521,22 +492,16 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
 
-        // TODO add your handling code here:
-        if (txtBuscar.getText().isEmpty()){
+      if (txtBuscar.getText().isEmpty()){
       String o=lblTitulo1.getText();
-          
-       }else{
-        letraf="";
-        letrabuscar=0;
-        Letra=' ';letra=Letra;
-        letrainicial=0;x=letrabuscar;
+      }else{
+        letraf="";  letrabuscar=0;Letra=' ';letra=Letra;letrainicial=0;x=letrabuscar;
         lblLetra.setText("");
         letraf="";  
-
-         letrabuscar=Integer.parseInt(txtBuscar.getText());
-         buscar(Nombre);
-         letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
-
+        letrabuscar=Integer.parseInt(txtBuscar.getText());
+        buscar(Nombre);
+        letraf=Character.toString(Buscarletra [(letrabuscar-1)]);
+        
        if (Buscarletra [(letrabuscar-1)]==' '){
         lblLetra.setText("_");
         btnMin.setEnabled(false);
@@ -546,64 +511,39 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
         lblLetra.setText("");}else{
         lblLetra.setText(letraf);
        }
-      if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
-           btnMay.setEnabled(false);
-           btnMin.setEnabled(true);
+       if (Character.isUpperCase(Buscarletra [(letrabuscar-1)])){
+        btnMay.setEnabled(false);
+        btnMin.setEnabled(true);
       }else{
-           btnMin.setEnabled(false);
-           btnMay.setEnabled(true);
+        btnMin.setEnabled(false);
+        btnMay.setEnabled(true);
       }
     }                                             
     }//GEN-LAST:event_btnSearchActionPerformed
 
-     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {                                          
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {                                          
     char validar = evt.getKeyChar();
     if(Character.isDigit(validar)){
      getToolkit().beep();
      evt.consume();
-     String o=lblTitulo1.getText();
-     if (o=="Your name:") {   
-           JOptionPane.showMessageDialog(this,"Please just enter letters.","Message",WARNING_MESSAGE);
-           }else{
-           JOptionPane.showMessageDialog(this,"Favor solo ingresar letras.","Mensaje",WARNING_MESSAGE);    
-           }
+     String o=lblTitulo1.getText();    
     }
-    
     }        
-
+     
     private void txtbuscarKeyTyped(java.awt.event.KeyEvent evt) {                                          
     if (lblName.getText()=="") { 
-      String o=lblTitulo1.getText();
-           if (o=="Your name:") { 
-           JOptionPane.showMessageDialog(this,"You must enter a name by pressing the \"show\" button.","Message",WARNING_MESSAGE);
-        }else{
-           JOptionPane.showMessageDialog(this,"Debe ingresar un nombre precionando el boton \"mostrar\".","Mensaje",WARNING_MESSAGE);
-          
-       }
+      String o=lblTitulo1.getText();    
     }
     char validar = evt.getKeyChar();
     if(Character.isLetter(validar)){
      getToolkit().beep();
      evt.consume();
      String o=lblTitulo1.getText();
-     if (o=="Your name:") {   
-           JOptionPane.showMessageDialog(this,"Please just enter numbers.","Message",WARNING_MESSAGE);
-           }else{
-           JOptionPane.showMessageDialog(this,"Favor solo ingresar numeros.","Mensaje",WARNING_MESSAGE);    
-           }
-    }    // TODO add your handling code here:
+    }    
     }            
-    
-    
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -623,8 +563,11 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new StringManager().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(){
+              new StringManager().setVisible(true);  
+            }
+          
         });
     }
 
