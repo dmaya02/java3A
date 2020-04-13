@@ -12,9 +12,9 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
       btnIngles.setEnabled(false);
       btnMay.setEnabled(false);  
       btnMin.setEnabled(false);  
-      btnReset.setEnabled(false);  
-      btnSearch.setEnabled(false);  
-      btnShow.setEnabled(false);
+      btnReset.setEnabled(true);  
+      btnSearch.setEnabled(true);  
+      btnShow.setEnabled(true);
     }
     public void Botones(){
     if (!txtName.getText().isEmpty()){  
@@ -24,9 +24,9 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
       btnMay.setEnabled(false);  
       btnMin.setEnabled(false); 
     }else{ 
-      btnReset.setEnabled(false);  
-      btnSearch.setEnabled(false);  
-      btnShow.setEnabled(false);  
+      btnReset.setEnabled(true);  
+      btnSearch.setEnabled(true);  
+      btnShow.setEnabled(true);  
       btnMay.setEnabled(false);  
       btnMin.setEnabled(false);      
     }   
@@ -382,14 +382,13 @@ String Nombre="",Mayus="",Minus="",Completo=Nombre,letraf="";
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    Botones();
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {                                             
     Botones();
     }
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
-    Botones();
+
      if (!txtName.getText().isEmpty()){
      Nombre=txtName.getText();
      lblName.setText(Nombre);
