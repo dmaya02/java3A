@@ -29,7 +29,7 @@ public class NumberRace extends javax.swing.JFrame {
         setIconImages(null);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setForeground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(null);
 
@@ -38,7 +38,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 610, 40);
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dices", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
         jPanel2.setLayout(null);
 

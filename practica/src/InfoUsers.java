@@ -51,6 +51,12 @@ public class InfoUsers extends javax.swing.JFrame {
 
         jLabel2.setText("INGRESE PRIMER NUMERO;");
 
+        n1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                n1ActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("INGRESE SEGUNDO NUMERO:");
 
         btnsumar.setText("SUMAR");
@@ -217,6 +223,10 @@ public class InfoUsers extends javax.swing.JFrame {
     private void btnsumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsumarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsumarActionPerformed
+
+    private void n1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_n1ActionPerformed
 
     /**
      * @param args the command line arguments
