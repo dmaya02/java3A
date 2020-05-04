@@ -10,9 +10,9 @@
  */
 public class ViewProducts extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewProducts
-     */
+    
+    
+    
     public ViewProducts() {
         initComponents();
     }
@@ -62,6 +62,11 @@ public class ViewProducts extends javax.swing.JFrame {
         btnAddProduct.setBackground(new java.awt.Color(0, 153, 153));
         btnAddProduct.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnAddProduct.setText("Add new product");
+        btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddProductActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -169,6 +174,12 @@ public class ViewProducts extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_btnAddProductActionPerformed
 
     /**
      * @param args the command line arguments
