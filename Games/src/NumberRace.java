@@ -4,10 +4,14 @@ import javax.swing.JOptionPane;
 
 
 public class NumberRace extends javax.swing.JFrame {
-
-   int counter = 0;
+    
+    String Playertxt = "",Leveltxt = "" , a , b , c , letraingresada, newc;
+    int Player = 0 ,Level = 0,Turn = 0,newlevel , D1 , D2 , i , P , A , x, counter = 0;
+    char[] letra; 
+    
     public NumberRace() {
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -19,8 +23,8 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbld1 = new javax.swing.JLabel();
         lbld2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnDados = new javax.swing.JButton();
+        btnAgain = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lblCounter = new javax.swing.JLabel();
@@ -28,9 +32,9 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmb1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmb2 = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -39,6 +43,8 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NumberRice");
@@ -73,30 +79,30 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel2.add(lbld2);
         lbld2.setBounds(120, 40, 86, 70);
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("PLAY");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDados.setBackground(new java.awt.Color(51, 102, 255));
+        btnDados.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnDados.setText("PLAY");
+        btnDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnDadosActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(70, 120, 90, 40);
+        jPanel2.add(btnDados);
+        btnDados.setBounds(70, 120, 90, 40);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(30, 290, 240, 170);
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("Try Again");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgain.setBackground(new java.awt.Color(153, 153, 153));
+        btnAgain.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnAgain.setText("Try Again");
+        btnAgain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAgainActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(610, 120, 120, 40);
+        jPanel1.add(btnAgain);
+        btnAgain.setBounds(570, 150, 210, 40);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -105,7 +111,7 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel3.setBounds(0, 30, 800, 30);
 
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Poinst", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         lblCounter.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         lblCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -165,19 +171,24 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel4.setText("Number of players:");
         jLabel4.setToolTipText("");
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cmb1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        cmb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cmb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cmb1ActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Level :");
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[150]" }));
+        cmb2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        cmb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[150]" }));
+        cmb2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(153, 153, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -194,8 +205,8 @@ public class NumberRace extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, 186, Short.MAX_VALUE)))
+                            .addComponent(cmb1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmb2, 0, 186, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -207,11 +218,11 @@ public class NumberRace extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmb1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmb2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -279,6 +290,23 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jPanel6);
         jPanel6.setBounds(290, 70, 250, 210);
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("About of");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(570, 210, 210, 40);
+
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setText("Config params");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(570, 90, 210, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -296,7 +324,7 @@ public class NumberRace extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDadosActionPerformed
         // TODO add your handling code here:
         Random D = new Random();
        
@@ -360,9 +388,9 @@ public class NumberRace extends javax.swing.JFrame {
         
         }
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnDadosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgainActionPerformed
         // TODO add your handling code here:
         //lbld1.setText("?");
         //lbld2.setText("?");
@@ -370,11 +398,39 @@ public class NumberRace extends javax.swing.JFrame {
         lbld2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
         
         lblCounter.setText("0");
+    }//GEN-LAST:event_btnAgainActionPerformed
+
+    private void cmb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb1ActionPerformed
+        // TODO add your handling code here:
+        //Configuracion numero de jugadores
+        Playertxt = cmb1.getSelectedItem().toString();
+        Player = Integer.parseInt(Playertxt);
+        System.out.println(Player);
+        cmb1.setEnabled(false);
+        if(Player!=0&&Level>=50){
+        btnDados.setEnabled(true);
+        
+        } 
+    }//GEN-LAST:event_cmb1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        ConfigGame ConfigGame = new ConfigGame();
+        ConfigGame.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cmb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        Leveltxt = cmb2.getSelectedItem().toString();         
+        cmb2.setEnabled(false); 
+        switch (Leveltxt){
+        case "Basic[50]":Level=50;break;
+        case "Intermediato[100]":Level=100;break;
+        case "Advanced[150]":Level=150;break; 
+        default:
+        }
+    }//GEN-LAST:event_cmb2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,11 +468,13 @@ public class NumberRace extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgain;
+    private javax.swing.JButton btnDados;
+    private javax.swing.JComboBox<String> cmb1;
+    private javax.swing.JComboBox<String> cmb2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
