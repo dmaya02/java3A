@@ -19,6 +19,8 @@ public class ConfigGame extends javax.swing.JFrame {
         btnContinue = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtAdd = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 400));
@@ -29,9 +31,9 @@ public class ConfigGame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SETTING");
+        jLabel1.setText("SETTINGS");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(3, 26, 410, 30);
+        jLabel1.setBounds(0, 20, 420, 30);
 
         btnBack.setBackground(new java.awt.Color(153, 153, 153));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -62,8 +64,19 @@ public class ConfigGame extends javax.swing.JFrame {
         jLabel2.setBounds(0, 90, 420, 22);
 
         txtAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtAdd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtAdd);
         txtAdd.setBounds(110, 140, 190, 30);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 10, 70, 64);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(340, 10, 70, 64);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,6 +157,8 @@ public static void main(String args[]) {
     private javax.swing.JButton btnContinue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtAdd;
     // End of variables declaration//GEN-END:variables

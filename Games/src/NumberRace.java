@@ -43,8 +43,8 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAbout = new javax.swing.JButton();
+        btnConfig = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NumberRice");
@@ -102,7 +102,7 @@ public class NumberRace extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAgain);
-        btnAgain.setBounds(570, 150, 210, 40);
+        btnAgain.setBounds(570, 110, 210, 40);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -290,22 +290,27 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jPanel6);
         jPanel6.setBounds(290, 70, 250, 210);
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("About of");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(570, 210, 210, 40);
-
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("Config params");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAbout.setBackground(new java.awt.Color(153, 153, 153));
+        btnAbout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAbout.setText("About of");
+        btnAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAboutActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(570, 90, 210, 40);
+        jPanel1.add(btnAbout);
+        btnAbout.setBounds(570, 190, 210, 40);
+
+        btnConfig.setBackground(new java.awt.Color(153, 153, 153));
+        btnConfig.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config.png"))); // NOI18N
+        btnConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConfig);
+        btnConfig.setBounds(730, 10, 60, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -413,12 +418,12 @@ public class NumberRace extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_cmb1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigActionPerformed
         // TODO add your handling code here:
         ConfigGame ConfigGame = new ConfigGame();
         ConfigGame.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnConfigActionPerformed
 
     private void cmb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb2ActionPerformed
         // TODO add your handling code here:
@@ -431,6 +436,14 @@ public class NumberRace extends javax.swing.JFrame {
         default:
         }
     }//GEN-LAST:event_cmb2ActionPerformed
+
+    private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
+        // TODO add your handling code here:
+        //Da informacion del juego
+        About About = new About();
+        About.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAboutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -468,12 +481,12 @@ public class NumberRace extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbout;
     private javax.swing.JButton btnAgain;
+    private javax.swing.JButton btnConfig;
     private javax.swing.JButton btnDados;
     private javax.swing.JComboBox<String> cmb1;
     private javax.swing.JComboBox<String> cmb2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
