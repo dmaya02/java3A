@@ -21,11 +21,12 @@ public class ConfigGame extends javax.swing.JFrame {
         txtAddOf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 400));
+        setMinimumSize(new java.awt.Dimension(400, 300));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
         jPanel1.setEnabled(false);
         jPanel1.setLayout(null);
 
@@ -70,6 +71,11 @@ public class ConfigGame extends javax.swing.JFrame {
                 txtAddOfActionPerformed(evt);
             }
         });
+        txtAddOf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAddOfKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtAddOf);
         txtAddOf.setBounds(110, 140, 190, 30);
 
@@ -83,15 +89,20 @@ public class ConfigGame extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(340, 10, 70, 64);
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(0, 0, 420, 300);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -102,34 +113,33 @@ public class ConfigGame extends javax.swing.JFrame {
         // TODO add your handling code here:
        NumberRace NumberRace = new NumberRace();          
        NumberRace.setVisible(true);      
-       this.setVisible(false);
-        
+       this.setVisible(false);  
     }//GEN-LAST:event_btnBackActionPerformed
-    public void txtAddKeyTyped(java.awt.event.KeyEvent evt) {                                     
-    char validar = evt.getKeyChar();
-    if(Character.isLetter(validar)){
-     getToolkit().beep();
-     evt.consume();
-    }else{        
-    }
-    } 
+     
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
         // TODO add your handling code here:
-       if(ConfigGame.txtAddOf.getText().isEmpty()){
-       JOptionPane.showMessageDialog(this,"No se completo la validacion.","Mensaje",WARNING_MESSAGE);  
-             //JOptionPane.showMessageDialog(this,"No dejar este espacio vacios.","Mensaje",WARNING_MESSAGE);  
-       }else{
-       NumberRace NumberRace = new NumberRace();          
-       NumberRace.setVisible(true);      
-       this.setVisible(false);
+        if(ConfigGame.txtAddOf.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"No se completo la validacion.","Mensaje",WARNING_MESSAGE);  
+        }else{
+            NumberRace NumberRace = new NumberRace();          
+            NumberRace.setVisible(true);      
+            this.setVisible(false);
        }               
     }//GEN-LAST:event_btnContinueActionPerformed
 
     private void txtAddOfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddOfActionPerformed
-        // TODO add your handling code here:
-   
-    
+        // TODO add your handling code here: 
     }//GEN-LAST:event_txtAddOfActionPerformed
+
+    private void txtAddOfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddOfKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+        }else{        
+        }
+    }//GEN-LAST:event_txtAddOfKeyTyped
 
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -170,6 +180,7 @@ public static void main(String args[]) {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField txtAddOf;
     // End of variables declaration//GEN-END:variables

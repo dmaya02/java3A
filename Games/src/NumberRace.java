@@ -5,9 +5,8 @@ import java.util.ArrayList;
 
 public class NumberRace extends javax.swing.JFrame {
     
-    String Playertxt = "",Leveltxt = "" , a , b , c , letraingresada, newc;
-    int Player = 0 ,Level = 0,Turn ,newlevel , D1 , D2 , i , P , A ,counter = 0, x = -1;
-    int choques=0;
+    String Playertx = "",Leveltx = "" , a , b , c , letraingresada, newc;
+    int Player = 0 ,Level = 0 ,newlevel , D1 , D2 , i , P , A ,counter = 0, x = -1, bro=0;
     int[] Advanced= new int [1000];
     int[] Missing= new int [1000];
     int[] Return= new int [1000];
@@ -32,7 +31,7 @@ public class NumberRace extends javax.swing.JFrame {
             
             Advanced[x]=A+Advanced[x];   
             Missing[x]=(Level-Advanced[x]);
-            Return[x]=choques+Return[x];
+            Return[x]=bro+Return[x];
             Pars[x]=P+Pars[x];
             lblJugador.setText(Integer.toString(x+1));
      
@@ -41,7 +40,7 @@ public class NumberRace extends javax.swing.JFrame {
             x=0; 
             Advanced[x]=A+Advanced[x];   
             Missing[x]=(Level-Advanced[x]);
-            Return[x]=choques+Return[x];
+            Return[x]=bro+Return[x];
             Pars[x]=P+Pars[x];
             lblJugador.setText(Integer.toString(x+1));
         } 
@@ -50,9 +49,7 @@ public class NumberRace extends javax.swing.JFrame {
               
             String W=lblJugador.getText();
             lblWin.setText("Player " + W + " Win.");
-           
             btnAgain.setEnabled(false);
-
             btnStart.setEnabled(true);  
         }else{
            
@@ -92,6 +89,8 @@ public class NumberRace extends javax.swing.JFrame {
         lblReturns = new javax.swing.JLabel();
         btnAbout = new javax.swing.JButton();
         btnConfig = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NumberRice");
@@ -99,7 +98,7 @@ public class NumberRace extends javax.swing.JFrame {
         setIconImages(null);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
         jPanel1.setForeground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(null);
 
@@ -108,7 +107,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 800, 40);
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Play zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
         jPanel2.setLayout(null);
 
@@ -157,7 +156,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 30, 800, 30);
 
-        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         lblPair.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -184,10 +183,11 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(290, 290, 250, 170);
 
-        jPanel4.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        lblWin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblWin.setBackground(new java.awt.Color(0, 153, 255));
+        lblWin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblWin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWin.setText("?");
 
@@ -195,10 +195,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(lblWin, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +208,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(560, 290, 230, 170);
 
-        jPanel5.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(51, 153, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Config Zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -283,7 +280,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(jPanel5);
         jPanel5.setBounds(30, 60, 240, 220);
 
-        jPanel6.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(0, 153, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Score", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -387,6 +384,15 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.add(btnConfig);
         btnConfig.setBounds(730, 10, 60, 50);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 800, 480);
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo2.png"))); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(560, 70, 230, 200);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -440,7 +446,7 @@ public class NumberRace extends javax.swing.JFrame {
                 break;
         }
         switch(d2){
-             case 1:
+            case 1:
                 lbld2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
                 break;
             case 2:
@@ -461,38 +467,31 @@ public class NumberRace extends javax.swing.JFrame {
             default:
                 break;
         }
-        
-       //if(d1 == 1 && d2 == 1){
-        
-            //JOptionPane.showMessageDialog(null, "::: YOU WIN :::");
-        
-       // }
+        //if(d1 == 1 && d2 == 1){
+        //JOptionPane.showMessageDialog(null, "::: YOU WIN :::");
+        // }
         //if(Turn<=Player-1){
-            
-           // lblJugador.setText(Integer.toString(Turn+1));
-           
-           // }else if(Turn==Turn){
-                
-                // lblJugador.setText(Integer.toString(1+Turn-Turn));
-       // }
-        
-       // lblJugador.setText(Integer.toString(Turn));       
+        // lblJugador.setText(Integer.toString(Turn+1));
+        // }else if(Turn==Turn){
+        // lblJugador.setText(Integer.toString(1+Turn-Turn));
+        // }
+        // lblJugador.setText(Integer.toString(Turn));       
         //if(Turn<=Player-1){          
         //    Turn++;
         //}else if(Turn==Player){
-            //  Turn=1;  
-       // }
+        //  Turn=1;  
+        // }
         lblPair.setText(Integer.toString(P));
         
         if(d1 == d2){
             P++;
         }
-        if(d1==d2&&d1==1){
-        A=(21)+A;
-        }else{
-        A=(d1+d2)+A;
+        if(d1==d2&&d1==6){ 
+            A=(21)+A;
+        }else{  
+            A=(d1+d2)+A;
         
-        if(d1==d2&&d1==1){
+        if(d1==d2&&d1==6){
         btnDados.setText(Integer.toString(21));
         }else{
         btnDados.setText(Integer.toString(d1+d2));
@@ -503,8 +502,7 @@ public class NumberRace extends javax.swing.JFrame {
         lblMissing.setText(Integer.toString(Missing[x])); 
         lblReturns.setText(Integer.toString(Return[x])); 
         lblPair.setText(Integer.toString(Pars[x]));
-        
-        System.out.println("Jugador: "+x+"||Posicion: "+Advanced[x]+"||Faltantes: "+Missing[x]+"||Pares: "+Pars[x]); 
+        //System.out.println("Jugador: "+x+"||Posicion: "+Advanced[x]+"||Faltantes: "+Missing[x]+"||Pares: "+Pars[x]); 
        
     }//GEN-LAST:event_btnDadosActionPerformed
 
@@ -514,7 +512,6 @@ public class NumberRace extends javax.swing.JFrame {
         //lbld2.setText("?");
         lbld1.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
         lbld2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
-        
         btnStart.setEnabled(true);
         cmb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         cmb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[200]" }));
@@ -523,18 +520,18 @@ public class NumberRace extends javax.swing.JFrame {
     private void cmb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb1ActionPerformed
         // TODO add your handling code here:
         //Configuracion numero de jugadores
-        Playertxt = cmb1.getSelectedItem().toString();
-        Player = Integer.parseInt(Playertxt);
+        Playertx = cmb1.getSelectedItem().toString();
+        Player = Integer.parseInt(Playertx);
         System.out.println(Player);
         cmb1.setEnabled(false);
         if(Player!=0&&Level>=50){
         btnDados.setEnabled(true);
-        
         } 
     }//GEN-LAST:event_cmb1ActionPerformed
 
     private void btnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigActionPerformed
         // TODO add your handling code here:
+        //LLeva a configuraciones
         ConfigGame ConfigGame = new ConfigGame();
         ConfigGame.setVisible(true);
         this.setVisible(false);
@@ -542,13 +539,18 @@ public class NumberRace extends javax.swing.JFrame {
 
     private void cmb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb2ActionPerformed
         // TODO add your handling code here:
-        Leveltxt = cmb2.getSelectedItem().toString();         
+        Leveltx = cmb2.getSelectedItem().toString();         
         cmb2.setEnabled(false); 
-        switch (Leveltxt){
-        case "Basic[50]":Level=50;break;
-        case "Intermediato[100]":Level=100;break;
-        case "Advanced[150]":Level=150;break; 
-        default:
+        switch (Leveltx){
+            
+            case "Basic[50]":Level=50;
+                break;
+            case "Intermediato[100]":Level=100;
+                break;
+            case "Advanced[150]":Level=150;
+                break; 
+            default:
+                break;
         }
     }//GEN-LAST:event_cmb2ActionPerformed
 
@@ -562,20 +564,17 @@ public class NumberRace extends javax.swing.JFrame {
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
         // TODO add your handling code here:
-       cmb1.setEnabled(true);
-       cmb2.setEnabled(true);  
-       btnAgain.setEnabled(true);
-       btnDados.setEnabled(true);
-       
-      
-       if(!"".equals(b));
-       if(ConfigGame.txtAddOf.getText().isEmpty()){
-       }else{
-           NumberRace.cmb1.addItem(ConfigGame.txtAddOf.getText());
+        cmb1.setEnabled(true);
+        cmb2.setEnabled(true);  
+        btnAgain.setEnabled(true);
+        btnDados.setEnabled(true);
 
-       }  
-      
-       btnStart.setEnabled(false);
+        if(!"".equals(b));
+        if(ConfigGame.txtAddOf.getText().isEmpty()){
+        }else{
+           NumberRace.cmb1.addItem(ConfigGame.txtAddOf.getText());
+        }  
+        btnStart.setEnabled(false);
     }//GEN-LAST:event_btnStartActionPerformed
 
     /**
@@ -621,6 +620,8 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JButton btnStart;
     public static javax.swing.JComboBox<String> cmb1;
     private javax.swing.JComboBox<String> cmb2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
