@@ -47,7 +47,9 @@ public class NumberRace extends javax.swing.JFrame {
         } 
         
         if(Advanced[x]>=Level||Pars[x]==3){
-            lblWin.getText(Player)();           
+              
+            String W=lblJugador.getText();
+            lblWin.setText("Player " + W + " Win.");
            
             btnAgain.setEnabled(false);
 
@@ -185,7 +187,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(0, 204, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        lblWin.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblWin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblWin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWin.setText("?");
 
@@ -194,9 +196,9 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -617,7 +619,7 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JButton btnConfig;
     private javax.swing.JButton btnDados;
     private javax.swing.JButton btnStart;
-    private javax.swing.JComboBox<String> cmb1;
+    public static javax.swing.JComboBox<String> cmb1;
     private javax.swing.JComboBox<String> cmb2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
