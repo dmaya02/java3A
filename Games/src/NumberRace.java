@@ -12,6 +12,15 @@ public class NumberRace extends javax.swing.JFrame {
     public NumberRace() {
         initComponents();
         
+        lbld1.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
+        lbld2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
+        btnStart.setEnabled(true);
+        cmb1.setEnabled(false);  
+        cmb2.setEnabled(false);  
+        btnAgain.setEnabled(false);
+        btnDados.setEnabled(false);
+        
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -27,7 +36,7 @@ public class NumberRace extends javax.swing.JFrame {
         btnAgain = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        lblCounter = new javax.swing.JLabel();
+        lblPair = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -35,13 +44,13 @@ public class NumberRace extends javax.swing.JFrame {
         cmb1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         cmb2 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        btnStart = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblJugador = new javax.swing.JLabel();
+        lblCoun = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         btnAbout = new javax.swing.JButton();
         btnConfig = new javax.swing.JButton();
@@ -113,9 +122,9 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        lblCounter.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        lblCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCounter.setText("0");
+        lblPair.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblPair.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPair.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -123,14 +132,14 @@ public class NumberRace extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(lblCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -190,9 +199,14 @@ public class NumberRace extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setText("Start Game");
+        btnStart.setBackground(new java.awt.Color(153, 153, 153));
+        btnStart.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnStart.setText("Start Game");
+        btnStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -209,7 +223,7 @@ public class NumberRace extends javax.swing.JFrame {
                             .addComponent(cmb2, 0, 186, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -224,7 +238,7 @@ public class NumberRace extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cmb2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -243,11 +257,11 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Missing :");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("#");
+        lblJugador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblJugador.setText("#");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("#");
+        lblCoun.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCoun.setText("#");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("#");
@@ -264,8 +278,8 @@ public class NumberRace extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
+                    .addComponent(lblCoun)
+                    .addComponent(lblJugador)
                     .addComponent(jLabel11))
                 .addGap(27, 27, 27))
         );
@@ -275,11 +289,11 @@ public class NumberRace extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(lblJugador))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel10))
+                    .addComponent(lblCoun))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -338,7 +352,7 @@ public class NumberRace extends javax.swing.JFrame {
         d2=(int)(D.nextDouble()* 6 + 1);
        
         counter = counter + (d1 + d2);
-        lblCounter.setText(Integer.toString(counter));
+        lblCoun.setText(Integer.toString(counter));
         //lbld1.setText(Integer.toString(d1));
         //lbld2.setText(Integer.toString(d2));
         
@@ -392,6 +406,23 @@ public class NumberRace extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "::: YOU WIN :::");
         
         }
+        if(Turn<=Player-1){
+        lblJugador.setText(Integer.toString(Turn+1));
+        }else if(Turn==Turn){
+            lblJugador.setText(Integer.toString(1+Turn-Turn));
+        }
+        
+        lblJugador.setText(Integer.toString(Turn));       
+        if(Turn<=Player-1){          
+            Turn++;
+        }else if(Turn==Player){
+              Turn=1;  
+        }
+        lblPair.setText(Integer.toString(P));
+        
+        if(d1 == d2){
+            P++;
+        }
        
     }//GEN-LAST:event_btnDadosActionPerformed
 
@@ -402,7 +433,9 @@ public class NumberRace extends javax.swing.JFrame {
         lbld1.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
         lbld2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
         
-        lblCounter.setText("0");
+        btnStart.setEnabled(true);
+        cmb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cmb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic[50]", "Intermediato[100]", "Advanced[200]" }));
     }//GEN-LAST:event_btnAgainActionPerformed
 
     private void cmb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb1ActionPerformed
@@ -445,6 +478,24 @@ public class NumberRace extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnAboutActionPerformed
 
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+        // TODO add your handling code here:
+       cmb1.setEnabled(true);
+       cmb2.setEnabled(true);  
+       btnAgain.setEnabled(true);
+       btnDados.setEnabled(true);
+       
+      
+       if(!"".equals(b));
+       if(ConfigGame.txtAddOf.getText().isEmpty()){
+       }else{
+           NumberRace.cmb1.addItem(ConfigGame.txtAddOf.getText());
+
+       }  
+      
+       btnStart.setEnabled(false);
+    }//GEN-LAST:event_btnStartActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -485,11 +536,10 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JButton btnAgain;
     private javax.swing.JButton btnConfig;
     private javax.swing.JButton btnDados;
+    private javax.swing.JButton btnStart;
     private javax.swing.JComboBox<String> cmb1;
     private javax.swing.JComboBox<String> cmb2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -498,14 +548,15 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel lblCounter;
+    private javax.swing.JLabel lblCoun;
+    private javax.swing.JLabel lblJugador;
+    private javax.swing.JLabel lblPair;
     private javax.swing.JLabel lbld1;
     private javax.swing.JLabel lbld2;
     // End of variables declaration//GEN-END:variables

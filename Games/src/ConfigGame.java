@@ -18,7 +18,7 @@ public class ConfigGame extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         btnContinue = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        txtAdd = new javax.swing.JTextField();
+        txtAddOf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -63,10 +63,15 @@ public class ConfigGame extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 90, 420, 22);
 
-        txtAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtAdd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(txtAdd);
-        txtAdd.setBounds(110, 140, 190, 30);
+        txtAddOf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtAddOf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAddOf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddOfActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtAddOf);
+        txtAddOf.setBounds(110, 140, 190, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -100,7 +105,7 @@ public class ConfigGame extends javax.swing.JFrame {
        this.setVisible(false);
         
     }//GEN-LAST:event_btnBackActionPerformed
-    private void txtAddKeyTyped(java.awt.event.KeyEvent evt) {                                     
+    public void txtAddKeyTyped(java.awt.event.KeyEvent evt) {                                     
     char validar = evt.getKeyChar();
     if(Character.isLetter(validar)){
      getToolkit().beep();
@@ -119,6 +124,17 @@ public class ConfigGame extends javax.swing.JFrame {
        this.setVisible(false);
        }               
     }//GEN-LAST:event_btnContinueActionPerformed
+
+    private void txtAddOfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddOfActionPerformed
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+    if(Character.isLetter(validar)){
+     getToolkit().beep();
+     evt.consume();
+    }else{        
+    }
+    } 
+    }//GEN-LAST:event_txtAddOfActionPerformed
 
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -160,6 +176,6 @@ public static void main(String args[]) {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtAdd;
+    private javax.swing.JTextField txtAddOf;
     // End of variables declaration//GEN-END:variables
 }
