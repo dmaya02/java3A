@@ -115,8 +115,8 @@ public class ConfigGame extends javax.swing.JFrame {
     } 
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
         // TODO add your handling code here:
-      /* if(ConfigGame.txtAdd.getText().isEmpty()){
-       JOptionPane.showMessageDialog(this,"No se completo la validacion de los datos 'Nivel de dificuldad', recuerde validar todos los capos.","Mensaje",WARNING_MESSAGE);  
+       if(ConfigGame.txtAddOf.getText().isEmpty()){
+       JOptionPane.showMessageDialog(this,"No se completo la validacion.","Mensaje",WARNING_MESSAGE);  
              //JOptionPane.showMessageDialog(this,"No dejar este espacio vacios.","Mensaje",WARNING_MESSAGE);  
        }else{
        NumberRace NumberRace = new NumberRace();          
@@ -127,13 +127,8 @@ public class ConfigGame extends javax.swing.JFrame {
 
     private void txtAddOfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddOfActionPerformed
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
-    if(Character.isLetter(validar)){
-     getToolkit().beep();
-     evt.consume();
-    }else{        
-    }
-    } 
+   
+    
     }//GEN-LAST:event_txtAddOfActionPerformed
 
 public static void main(String args[]) {
@@ -176,6 +171,6 @@ public static void main(String args[]) {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtAddOf;
+    public static javax.swing.JTextField txtAddOf;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,17 @@
 import java.util.Random;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-
+//import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class NumberRace extends javax.swing.JFrame {
     
     String Playertxt = "",Leveltxt = "" , a , b , c , letraingresada, newc;
-    int Player = 0 ,Level = 0,Turn = 0,newlevel , D1 , D2 , i , P , A , x, counter = 0;
-    char[] letra; 
+    int Player = 0 ,Level = 0,Turn ,newlevel , D1 , D2 , i , P , A ,counter = 0, x = -1;
+    int choques=0;
+    int[] Advanced= new int [1000];
+    int[] Missing= new int [1000];
+    int[] Return= new int [1000];
+    int[] Pars= new int [1000];
     
     public NumberRace() {
         initComponents();
@@ -20,7 +24,37 @@ public class NumberRace extends javax.swing.JFrame {
         btnAgain.setEnabled(false);
         btnDados.setEnabled(false);
         
+    }
+    public void Play(){
         
+        x++;
+        if(x<=Player-1){
+            
+            Advanced[x]=A+Advanced[x];   
+            Missing[x]=(Level-Advanced[x]);
+            Return[x]=choques+Return[x];
+            Pars[x]=P+Pars[x];
+            lblJugador.setText(Integer.toString(x+1));
+     
+        }else{
+            
+            x=0; 
+            Advanced[x]=A+Advanced[x];   
+            Missing[x]=(Level-Advanced[x]);
+            Return[x]=choques+Return[x];
+            Pars[x]=P+Pars[x];
+            lblJugador.setText(Integer.toString(x+1));
+        } 
+        
+        if(Advanced[x]>=Level||Pars[x]==3){
+            lblWin.getText(Player)();           
+           
+            btnAgain.setEnabled(false);
+
+            btnStart.setEnabled(true);  
+        }else{
+           
+        } 
     }
 
     @SuppressWarnings("unchecked")
@@ -38,7 +72,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lblPair = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblWin = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         cmb1 = new javax.swing.JComboBox<>();
@@ -50,8 +84,10 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblJugador = new javax.swing.JLabel();
-        lblCoun = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblAdvans = new javax.swing.JLabel();
+        lblMissing = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        lblReturns = new javax.swing.JLabel();
         btnAbout = new javax.swing.JButton();
         btnConfig = new javax.swing.JButton();
 
@@ -149,9 +185,9 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(0, 204, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("?");
+        lblWin.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblWin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWin.setText("?");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -159,14 +195,14 @@ public class NumberRace extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -255,16 +291,22 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel7.setText("Advanced positions :");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Missing :");
+        jLabel8.setText("Missing positions :");
 
         lblJugador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblJugador.setText("#");
 
-        lblCoun.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblCoun.setText("#");
+        lblAdvans.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAdvans.setText("#");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setText("#");
+        lblMissing.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblMissing.setText("#");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Returns :");
+
+        lblReturns.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblReturns.setText("#");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -273,32 +315,49 @@ public class NumberRace extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCoun)
-                    .addComponent(lblJugador)
-                    .addComponent(jLabel11))
-                .addGap(27, 27, 27))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblReturns, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMissing))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(64, 64, 64)
+                                .addComponent(lblAdvans)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(27, 27, 27))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblJugador))
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(lblCoun))
-                .addGap(35, 35, 35)
+                    .addComponent(lblAdvans))
+                .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel11))
-                .addContainerGap(34, Short.MAX_VALUE))
+                    .addComponent(lblMissing))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(lblReturns))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel6);
@@ -352,10 +411,10 @@ public class NumberRace extends javax.swing.JFrame {
         d2=(int)(D.nextDouble()* 6 + 1);
        
         counter = counter + (d1 + d2);
-        lblCoun.setText(Integer.toString(counter));
+        lblAdvans.setText(Integer.toString(counter));
         //lbld1.setText(Integer.toString(d1));
         //lbld2.setText(Integer.toString(d2));
-        
+        A = 0 ;
         switch(d1){
             case 1:
                 lbld1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
@@ -401,28 +460,49 @@ public class NumberRace extends javax.swing.JFrame {
                 break;
         }
         
-        if(d1 == 1 && d2 == 1){
+       //if(d1 == 1 && d2 == 1){
         
-            JOptionPane.showMessageDialog(null, "::: YOU WIN :::");
+            //JOptionPane.showMessageDialog(null, "::: YOU WIN :::");
         
-        }
-        if(Turn<=Player-1){
-        lblJugador.setText(Integer.toString(Turn+1));
-        }else if(Turn==Turn){
-            lblJugador.setText(Integer.toString(1+Turn-Turn));
-        }
+       // }
+        //if(Turn<=Player-1){
+            
+           // lblJugador.setText(Integer.toString(Turn+1));
+           
+           // }else if(Turn==Turn){
+                
+                // lblJugador.setText(Integer.toString(1+Turn-Turn));
+       // }
         
-        lblJugador.setText(Integer.toString(Turn));       
-        if(Turn<=Player-1){          
-            Turn++;
-        }else if(Turn==Player){
-              Turn=1;  
-        }
+       // lblJugador.setText(Integer.toString(Turn));       
+        //if(Turn<=Player-1){          
+        //    Turn++;
+        //}else if(Turn==Player){
+            //  Turn=1;  
+       // }
         lblPair.setText(Integer.toString(P));
         
         if(d1 == d2){
             P++;
         }
+        if(d1==d2&&d1==1){
+        A=(21)+A;
+        }else{
+        A=(d1+d2)+A;
+        
+        if(d1==d2&&d1==1){
+        btnDados.setText(Integer.toString(21));
+        }else{
+        btnDados.setText(Integer.toString(d1+d2));
+        }
+        }  
+        Play();
+        lblAdvans.setText(Integer.toString(Advanced[x])); 
+        lblMissing.setText(Integer.toString(Missing[x])); 
+        lblReturns.setText(Integer.toString(Return[x])); 
+        lblPair.setText(Integer.toString(Pars[x]));
+        
+        System.out.println("Jugador: "+x+"||Posicion: "+Advanced[x]+"||Faltantes: "+Missing[x]+"||Pares: "+Pars[x]); 
        
     }//GEN-LAST:event_btnDadosActionPerformed
 
@@ -539,8 +619,6 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JButton btnStart;
     private javax.swing.JComboBox<String> cmb1;
     private javax.swing.JComboBox<String> cmb2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -548,15 +626,19 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel lblCoun;
+    private javax.swing.JLabel lblAdvans;
     private javax.swing.JLabel lblJugador;
+    private javax.swing.JLabel lblMissing;
     private javax.swing.JLabel lblPair;
+    private javax.swing.JLabel lblReturns;
+    private javax.swing.JLabel lblWin;
     private javax.swing.JLabel lbld1;
     private javax.swing.JLabel lbld2;
     // End of variables declaration//GEN-END:variables
