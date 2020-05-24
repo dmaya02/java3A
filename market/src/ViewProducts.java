@@ -176,11 +176,9 @@ public class ViewProducts extends javax.swing.JFrame {
         Integer.parseInt(txtQ.getText()),
         Float.parseFloat(txtPrice.getText())
         );
-        
-       
-        
-        
-        product_list.add(products);
+             
+      
+         product_list.add(products);
         
         showData();
          
