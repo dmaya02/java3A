@@ -1,4 +1,4 @@
-
+import java.util.Random;
 import javax.swing.ImageIcon;
 
 /*
@@ -12,10 +12,10 @@ import javax.swing.ImageIcon;
  * @author German
  */
 public class SpinningTop extends javax.swing.JFrame {
+    
+    int a;
 
-    /**
-     * Creates new form SpinningTop
-     */
+    
     public SpinningTop() {
         initComponents();
         setLocationRelativeTo(null);
@@ -49,6 +49,7 @@ public class SpinningTop extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        lblPiri = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -64,6 +65,7 @@ public class SpinningTop extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Spinning Top");
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(700, 470));
         setResizable(false);
         getContentPane().setLayout(null);
@@ -75,7 +77,7 @@ public class SpinningTop extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Player 1");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(167, 28, 60, 22);
+        jLabel6.setBounds(170, 20, 60, 22);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Player 2");
@@ -95,7 +97,7 @@ public class SpinningTop extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Coins");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(180, 50, 35, 14);
+        jLabel10.setBounds(180, 40, 35, 14);
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Coins");
@@ -200,6 +202,11 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel1.add(jPanel8);
         jPanel8.setBounds(160, 260, 68, 49);
 
+        lblPiri.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPiri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/0.png"))); // NOI18N
+        jPanel1.add(lblPiri);
+        lblPiri.setBounds(140, 130, 110, 90);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 20, 370, 340);
 
@@ -283,6 +290,11 @@ public class SpinningTop extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Spin Around");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 380, 370, 40);
 
@@ -304,6 +316,43 @@ public class SpinningTop extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Random P = new Random();
+       
+        int p = 0 ;
+        p=(int)(P.nextDouble()* 6 + 1);
+       
+       
+        //counter = counter + (d1 + d2);
+        //lblAdvans.setText(Integer.toString(counter));
+        //lbld1.setText(Integer.toString(d1));
+        //lbld2.setText(Integer.toString(d2));
+        a = 0 ;
+        switch(p){
+            case 1:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon1.png")));
+                break;
+            case 2:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon2.png")));
+                break;
+            case 3:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma1.png")));
+                break;
+            case 4:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma2.png")));
+                break;
+            case 5:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/tomatodo.png")));
+                break;
+            case 6:
+                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/todosponen.png")));
+                break;
+            default:
+                break;
+        }       
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -370,5 +419,6 @@ public class SpinningTop extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel lblPiri;
     // End of variables declaration//GEN-END:variables
 }
