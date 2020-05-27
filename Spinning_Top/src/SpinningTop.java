@@ -323,9 +323,7 @@ public class SpinningTop extends javax.swing.JFrame {
        
         int p = 0 ;
         p=(int)(P.nextDouble()* 6 + 1);
-       
-       
-        //counter = counter + (d1 + d2);
+              //counter = counter + (d1 + d2);
         //lblAdvans.setText(Integer.toString(counter));
         //lbld1.setText(Integer.toString(d1));
         //lbld2.setText(Integer.toString(d2));
