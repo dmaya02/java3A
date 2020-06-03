@@ -3,7 +3,7 @@ import javax.swing.ImageIcon;
 
 public class SpinningTop extends javax.swing.JFrame {
     
-    int a = 1, p1= 0, p2=0, p3=0, p4=0,C;
+    int i = 1, p1= 0, p2=0, p3=0, p4=0,C;
     int counter;
 
     
@@ -49,7 +49,8 @@ public class SpinningTop extends javax.swing.JFrame {
         lblAcu = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblWin = new javax.swing.JLabel();
-        btnPiri = new javax.swing.JButton();
+        lblWin1 = new javax.swing.JLabel();
+        btnPirinola = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -117,15 +118,15 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(lblP1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(lblP1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel5);
-        jPanel5.setBounds(160, 70, 68, 49);
+        jPanel5.setBounds(150, 60, 80, 60);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -139,15 +140,15 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(lblP2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(lblP2, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel6);
-        jPanel6.setBounds(40, 170, 68, 49);
+        jPanel6.setBounds(28, 170, 80, 60);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -161,15 +162,15 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP4, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(lblP4, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP4, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(lblP4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel7);
-        jPanel7.setBounds(280, 170, 68, 49);
+        jPanel7.setBounds(268, 170, 80, 60);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -183,15 +184,15 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP3, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(lblP3, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblP3, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(lblP3, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel8);
-        jPanel8.setBounds(160, 260, 68, 49);
+        jPanel8.setBounds(160, 260, 80, 60);
 
         lblPiri.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPiri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/0.png"))); // NOI18N
@@ -199,7 +200,7 @@ public class SpinningTop extends javax.swing.JFrame {
         lblPiri.setBounds(140, 130, 110, 90);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 20, 370, 340);
+        jPanel1.setBounds(0, 20, 370, 340);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Config Zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -213,7 +214,6 @@ public class SpinningTop extends javax.swing.JFrame {
         cmbPlay.setEditable(true);
         cmbPlay.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cmbPlay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "10", "20", "30" }));
-        cmbPlay.setFocusable(false);
         jPanel2.add(cmbPlay);
         cmbPlay.setBounds(140, 20, 140, 30);
 
@@ -260,40 +260,49 @@ public class SpinningTop extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Winner"));
 
-        lblWin.setFont(new java.awt.Font("Tahoma", 1, 55)); // NOI18N
+        lblWin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblWin.setText("?");
+
+        lblWin1.setFont(new java.awt.Font("Tahoma", 1, 5)); // NOI18N
+        lblWin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/campeon.png"))); // NOI18N
+        lblWin1.setText(".");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(127, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblWin1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(lblWin)
-                .addGap(122, 122, 122))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(lblWin, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblWin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblWin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(390, 270, 290, 90);
 
-        btnPiri.setBackground(new java.awt.Color(255, 0, 0));
-        btnPiri.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnPiri.setForeground(new java.awt.Color(255, 255, 255));
-        btnPiri.setText("Spin around -> Player #");
-        btnPiri.setEnabled(false);
-        btnPiri.addActionListener(new java.awt.event.ActionListener() {
+        btnPirinola.setBackground(new java.awt.Color(255, 0, 0));
+        btnPirinola.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnPirinola.setForeground(new java.awt.Color(255, 255, 255));
+        btnPirinola.setText("Spin around -> Player #");
+        btnPirinola.setEnabled(false);
+        btnPirinola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPiriActionPerformed(evt);
+                btnPirinolaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPiri);
-        btnPiri.setBounds(10, 380, 370, 40);
+        getContentPane().add(btnPirinola);
+        btnPirinola.setBounds(10, 380, 370, 40);
 
         btnReset.setBackground(new java.awt.Color(0, 0, 255));
         btnReset.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -320,42 +329,42 @@ public class SpinningTop extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiriActionPerformed
+    private void btnPirinolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPirinolaActionPerformed
         // TODO add your handling code here:
         Random P = new Random();
         int p = 0 ;
-        C = Integer.parseInt(cmbPlay.getSelectedItem().toString()); 
-        if(a == 1){
-            a = a + 1;         
-            if(p1 > 0){
-                    btnPiri.setText("Spin around -> Player 1"); 
-                     p = (int)(P.nextDouble()* 6 + 1);
-                    if(p == 1){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon1.png")));
-                            if (p1 >= 1){
+        C = Integer.parseInt(cmbPlay.getSelectedItem().toString());
+            if (i == 1){
+                i = i + 1;
+                if (p1 > 0){
+                    btnPirinola.setText("Spin around -> Player 1");
+                    p =(int) (P.nextDouble()* 6 + 1);
+                    if (p == 1){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon1.png")));
+                        if (p1 >= 1){
                             p1 = p1 -1;
                             lblP1.setText(String.valueOf(p1));
-                            counter= counter + 1;
-                            lblAcu.setText(String.valueOf(counter));  
+                            counter = counter +1;
+                            lblAcu.setText(String.valueOf(counter));
                         }
                     }else if (p == 2){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon2.png")));
-                        if (p1 >= 2){   
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon2.png")));
+                        if (p1 >= 2){
                             p1 = p1 - 2;
                             lblP1.setText(String.valueOf(p1));
                             counter = counter +2;
                             lblAcu.setText(String.valueOf(counter));
                         }
                     }else if (p == 3){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma1.png")));
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma1.png")));
                         if (counter >= 1){
                             p1 = p1 + 1;
                             lblP1.setText(String.valueOf(p1));
                             counter = counter -1;
                             lblAcu.setText(String.valueOf(counter));
-                        }   
+                        }
                     }else if (p == 4){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma2.png")));
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma2.png")));
                         if (counter >= 2){
                             p1 = p1 +2;
                             lblP1.setText(String.valueOf(p1));
@@ -363,7 +372,7 @@ public class SpinningTop extends javax.swing.JFrame {
                             lblAcu.setText(String.valueOf(counter));
                         }
                     }else if (p == 5){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/tomatodo.png")));
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/tomatodo.png")));
                         if (counter > 0){
                             p1 = p1 + counter;
                             lblP1.setText(String.valueOf(p1));
@@ -371,7 +380,7 @@ public class SpinningTop extends javax.swing.JFrame {
                             lblAcu.setText(String.valueOf(counter));
                         }
                     }else if (p == 6){
-                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/todosponen.png")));
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/todospoen.png")));
                         if (p1 >= 1){
                             p1 = p1 - 1;   
                             counter = counter + 1;
@@ -390,252 +399,261 @@ public class SpinningTop extends javax.swing.JFrame {
                         if (p4 >= 1){
                             p4 = p4 - 1;
                             counter = counter + 1;
+                            lblP4.setText(String.valueOf(p1));
+                        }
+                        lblAcu.setText(String.valueOf(counter));
+                    }
+                }else if(p1 <= 0){
+                    //lblP1.setIcon(new ImageIcon(getClass().getResource("/icons/gameover.png")));
+                    lblP1.setText("GAME OVER");
+                }
+            }else if (i == 2){
+                i = i + 1;
+                if (p2 > 0){
+                    btnPirinola.setText("Spin around -> Player 2");
+                    p =(int) (P.nextDouble()* 6 + 1);
+                    if (p == 1){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon1.png")));
+                        if (p2 >= 1){
+                            p2 = p2 -1;
+                            lblP2.setText(String.valueOf(p2));
+                            counter = counter +1;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 2){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon2.png")));
+                        if (p2 >= 1){
+                            p2 = p2 - 2;
+                            lblP2.setText(String.valueOf(p2));
+                            counter = counter +2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }    
+                    }else if (p == 3){
+                        if (counter >= 1){
+                            lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma1.png")));
+                            p2 = p2 + 1;
+                            lblP2.setText(String.valueOf(p2));
+                            counter = counter -1;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 4){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma2.png")));
+                        if (counter >= 2){
+                            p2 = p2 +2;
+                            lblP2.setText(String.valueOf(p2));
+                            counter = counter -2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 5){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/tomatodo.png")));
+                        if (counter > 0){
+                            p2 = p2 + counter;
+                            lblP2.setText(String.valueOf(p2));
+                            counter = counter - counter;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 6){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/todospoen.png")));
+                        if (p1 >= 1){
+                            p1 = p1 - 1;  
+                            counter = counter + 1;
+                            lblP1.setText(String.valueOf(p1));
+                        }
+                        if (p2 >= 1){
+                            p2 = p2 - 1; 
+                            counter = counter + 1;
+                            lblP2.setText(String.valueOf(p2));
+                        }
+                        if (p3 >= 1){
+                            p3 = p3 - 1; 
+                            counter = counter + 1;
+                            lblP3.setText(String.valueOf(p3));
+                        }
+                        if (p4 >= 1){
+                            p4 = p4 - 1;
+                            counter = counter + 1;
                             lblP4.setText(String.valueOf(p4));
                         }
                         lblAcu.setText(String.valueOf(counter));
+                    }    
+                }else if(p2 <= 0){
+                    //lblP2.setIcon(new ImageIcon(getClass().getResource("/icons/gameover.png")));
+                    lblP2.setText("GAME OVER");
+                }    
+        }else if (i == 3){
+                i = i + 1;
+                if (p3 > 0){
+                    btnPirinola.setText("Spin around -> Player 3");
+                    p =(int) (P.nextDouble()* 6 + 1);
+                    if (p == 1){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon1.png")));
+                        if (p3 >= 1){ 
+                            p3 = p3 -1;
+                            lblP3.setText(String.valueOf(p3));
+                            counter = counter +1;
+                            lblAcu.setText(String.valueOf(counter));
                         }
-                    }else if(p1 <= 0){    
-                        lblP1.setText("ELIMINADO");
+                    }else if (p == 2){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon2.png")));
+                        if (p3 >= 1){
+                            p3 = p3 - 2;
+                            lblP3.setText(String.valueOf(p3));
+                            counter = counter + 2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }    
+                    }else if (p == 3){
+                        if (counter >= 1){
+                            lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma1.png")));
+                            p3 = p3 + 1;
+                            lblP3.setText(String.valueOf(p3));
+                            counter = counter -1;
+                            lblAcu.setText(String.valueOf(lblAcu));
+                        }
+                    }else if (p == 4){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma2.png")));
+                        if (counter >= 2){
+                            p3 = p3 + 2;
+                            lblP3.setText(String.valueOf(p3));
+                            counter = counter - 2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 5){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/tomatodo.png")));
+                        if (counter > 0){
+                            p3 = p3 + counter;
+                            lblP3.setText(String.valueOf(p3));
+                            counter = counter - counter;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 6){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/todospoen.png")));
+                        if (p1 >= 1){
+                            p1 = p1 - 1;    
+                            counter = counter + 1;
+                            lblP1.setText(String.valueOf(p1));
+                        }
+                        if (p2 >= 1){
+                            p2 = p2 - 1; 
+                            counter = counter+ 1;
+                            lblP2.setText(String.valueOf(p2));
+                        }
+                        if (p3 >= 1){
+                            p3 = p3 - 1; 
+                            counter = counter + 1;
+                            lblP3.setText(String.valueOf(p3));
+                        }
+                        if (p4 >= 1){
+                            p4 = p4 - 1;
+                            counter = counter + 1;
+                            lblP4.setText(String.valueOf(p4));
+                        }
+                        lblAcu.setText(String.valueOf(counter));
                     }
-                }else if(a == 2){
-                    a = a + 1;         
-                    if(p2 > 0){
-                            btnPiri.setText("Spin around -> Player 2"); 
-                            p = (int)(P.nextDouble()* 6 + 1);
-                            if(p == 1){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon1.png")));
-                                if (p2 >= 1){
-                                    p2 = p2 -1;
-                                    lblP2.setText(String.valueOf(p2));
-                                    counter= counter +1;
-                                    lblAcu.setText(String.valueOf(counter));  
-                                }
-                            }else if (p == 2){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon2.png")));
-                                if (p2 >= 2){   
-                                    p2 = p2 - 2;
-                                    lblP2.setText(String.valueOf(p2));
-                                    counter = counter +2;
-                                    lblAcu.setText(String.valueOf(counter));
-                                }
-                            }else if (p == 3){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma1.png")));
-                                if (counter >= 1){
-                                    p2 = p2 + 1;
-                                    lblP2.setText(String.valueOf(p2));
-                                    counter = counter -1;
-                                    lblAcu.setText(String.valueOf(counter));
-                                }   
-                            }else if (p == 4){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma2.png")));
-                                if (counter >= 2){
-                                    p2 = p2 +2;
-                                    lblP2.setText(String.valueOf(p2));
-                                    counter = counter -2;
-                                    lblAcu.setText(String.valueOf(counter));
-                                }
-                            }else if (p == 5){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/tomatodo.png")));
-                                if (counter > 0){
-                                    p2 = p2 + counter;
-                                    lblP2.setText(String.valueOf(p2));
-                                    counter = counter - counter;
-                                    lblAcu.setText(String.valueOf(counter));
-                                }
-                            }else if (p == 6){
-                                lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/todosponen.png")));
-                                if (p1 >= 1){
-                                    p1 = p1 - 1;   
-                                    counter = counter + 1;
-                                    lblP1.setText(String.valueOf(p1));
-                                }
-                                if (p2 >= 1){
-                                    p2 = p2 - 1; 
-                                    counter = counter + 1;
-                                    lblP2.setText(String.valueOf(p2));
-                                }
-                                if (p3 >= 1){
-                                    p3 = p3 - 1;
-                                    counter = counter + 1;
-                                    lblP3.setText(String.valueOf(p3));
-                                }
-                                if (p4 >= 1){
-                                    p4 = p4 - 1;
-                                    counter = counter + 1;
-                                    lblP4.setText(String.valueOf(p4));
-                                }
-                                lblAcu.setText(String.valueOf(counter));
-                                }
-                            }else if(p2 <= 0){ 
-                                lblP2.setText("ELIMINADO");
-                            }
-                    }else if(a == 3){
-                        a = a + 1;         
-                        if(p3 > 0){
-                                btnPiri.setText("Spin around -> Player 3"); 
-                                 p = (int)(P.nextDouble()* 6 + 1);
-                                if(p == 1){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon1.png")));
-                                    if (p3 >= 1){
-                                        p3 = p3 -1;
-                                        lblP3.setText(String.valueOf(p3));
-                                        counter= counter +1;
-                                        lblAcu.setText(String.valueOf(counter));  
-                                    }
-                                }else if (p == 2){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon2.png")));
-                                    if (p3 >= 2){   
-                                        p3 = p3 - 2;
-                                        lblP3.setText(String.valueOf(p3));
-                                        counter = counter +2;
-                                        lblAcu.setText(String.valueOf(counter));
-                                    }
-                                }else if (p == 3){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma1.png")));
-                                    if (counter >= 1){
-                                        p3 = p3 + 1;
-                                        lblP3.setText(String.valueOf(p3));
-                                        counter = counter -1;
-                                        lblAcu.setText(String.valueOf(counter));
-                                    }   
-                                }else if (p == 4){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma2.png")));
-                                    if (counter >= 2){
-                                        p3 = p3 +2;
-                                        lblP3.setText(String.valueOf(p3));
-                                        counter = counter -2;
-                                        lblAcu.setText(String.valueOf(counter));
-                                    }
-                                }else if (p == 5){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/tomatodo.png")));
-                                    if (counter > 0){
-                                        p3 = p3 + counter;
-                                        lblP3.setText(String.valueOf(p2));
-                                        counter = counter - counter;
-                                        lblAcu.setText(String.valueOf(counter));
-                                    }
-                                }else if (p == 6){
-                                    lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/todosponen.png")));
-                                    if (p1 >= 1){
-                                        p1 = p1 - 1;   
-                                        counter = counter + 1;
-                                        lblP1.setText(String.valueOf(p1));
-                                    }
-                                    if (p2 >= 1){
-                                        p2 = p2 - 1; 
-                                        counter = counter + 1;
-                                        lblP2.setText(String.valueOf(p2));
-                                    }
-                                    if (p3 >= 1){
-                                        p3 = p3 - 1;
-                                        counter = counter + 1;
-                                        lblP3.setText(String.valueOf(p3));
-                                    }
-                                    if (p4 >= 1){
-                                        p4 = p4 - 1;
-                                        counter = counter + 1;
-                                        lblP4.setText(String.valueOf(p4));
-                                    }
-                                    lblAcu.setText(String.valueOf(counter));
-                                    }
-                                }else if(p3 <= 0){ 
-                                    lblP3.setText("ELIMINADO");
-                                }
-                         }else if(a == 4){
-                            a = 1 - 3;         
-                                if(p4 > 0){
-                                    btnPiri.setText("Spin around -> Player 4"); 
-                                    p = (int)(P.nextDouble()* 6 + 1);
-                                    if(p == 1){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon1.png")));
-                                        if (p4 >= 1){
-                                            p4 = p4 -1;
-                                            lblP4.setText(String.valueOf(p4));
-                                            counter= counter +1;
-                                            lblAcu.setText(String.valueOf(counter));  
-                                        }
-                                    }else if (p == 2){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/pon2.png")));
-                                        if (p4 >= 2){   
-                                            p4 = p4 - 2;
-                                            lblP4.setText(String.valueOf(p4));
-                                            counter = counter +2;
-                                            lblAcu.setText(String.valueOf(counter));
-                                        }
-                                    }else if (p == 3){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma1.png")));
-                                        if (counter >= 1){
-                                            p4 = p4 + 1;
-                                            lblP4.setText(String.valueOf(p4));
-                                            counter = counter -1;
-                                            lblAcu.setText(String.valueOf(counter));
-                                        }   
-                                    }else if (p == 4){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/toma2.png")));
-                                        if (counter >= 2){
-                                            p4 = p4 +2;
-                                            lblP2.setText(String.valueOf(p4));
-                                            counter = counter -2;
-                                            lblAcu.setText(String.valueOf(counter));
-                                        }
-                                    }else if (p == 5){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/tomatodo.png")));
-                                        if (counter > 0){
-                                            p4 = p4 + counter;
-                                            lblP4.setText(String.valueOf(p4));
-                                            counter = counter - counter;
-                                            lblAcu.setText(String.valueOf(counter));
-                                        }
-                                    }else if (p == 6){
-                                        lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/todosponen.png")));
-                                        if (p1 >= 1){
-                                            p1 = p1 - 1;   
-                                            counter = counter + 1;
-                                            lblP1.setText(String.valueOf(p1));
-                                        }
-                                        if (p2 >= 1){
-                                            p2 = p2 - 1; 
-                                            counter = counter + 1;
-                                            lblP2.setText(String.valueOf(p2));
-                                        }
-                                        if (p3 >= 1){
-                                            p3 = p3 - 1;
-                                            counter = counter + 1;
-                                            lblP3.setText(String.valueOf(p3));
-                                        }
-                                        if (p4 >= 1){
-                                            p4 = p4 - 1;
-                                            counter = counter + 1;
-                                            lblP4.setText(String.valueOf(p4));
-                                        }
-                                        lblAcu.setText(String.valueOf(counter));
-                                        }
-                                    }else if(p4 <= 0){ 
-                                        lblP4.setText("ELIMINADO");
-                                    }
+                }else if(p3 <= 0){
+                   //lblP3.setIcon(new ImageIcon(getClass().getResource("/icons/gameover.png")));
+                   lblP3.setText("GAME OVER");
+                }       
+        }else if (i == 4){
+                i = i - 3;
+                if (p4 > 0){
+                    btnPirinola.setText("Spin around -> Player 4");
+                    p =(int) (P.nextDouble() * 6 + 1);
+                    if (p == 1){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon1.png")));
+                        if (p4 >= 1){ 
+                            p4 = p4 - 1;
+                            lblP4.setText(String.valueOf(p4));
+                            counter = counter + 1;
+                            lblAcu.setText(String.valueOf(counter));
                         }
-                        if (p1 >= 1 && p2 <= 0 && p3 <= 0 && p4 <= 0){
-                            lblWin.setText("Player 1");
-                            a = 0;
-                            btnPiri.setText("Spin around -> Player #");
-                            btnPiri.setEnabled(false);
-                        }else if (p2 >= 1 && p1 <= 0 && p3 <= 0 && p4 <= 0){
-                            lblWin.setText("Player 2");
-                            a = 0;
-                            btnPiri.setText("Spin around -> Player #");
-                            btnPiri.setEnabled(false);
-                        }else if (p3 >= 1 && p1 <= 0 && p2 <= 0 && p4 <= 0){
-                            lblWin.setText("Player 3");
-                            a = 0;
-                            btnPiri.setText("Spin around -> Player #");
-                            btnPiri.setEnabled(false);
-                        }else if (p4 >= 1 && p1 <= 0 && p2 <= 0 && p3 <= 0){
-                            lblWin.setText("Player 4");
-                            a = 0;
-                            btnPiri.setText("Spin around -> Player #");
-                            btnPiri.setEnabled(false);
+                    }else if (p == 2){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/pon2.png")));
+                        if (p4 >= 1){
+                            p4 = p4 - 2;
+                            lblP4.setText(String.valueOf(p4));
+                            counter = counter +2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }    
+                    }else if (p == 3){
+                        if (counter >= 1){
+                            lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma1.png")));
+                            p4 = p4 + 1;
+                            lblP4.setText(String.valueOf(p4));
+                            counter = counter - 1;
+                            lblAcu.setText(String.valueOf(counter));
                         }
-    }//GEN-LAST:event_btnPiriActionPerformed
+                    }else if (p == 4){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/toma2.png")));
+                        if (counter >= 2){
+                            p4 = p4 +2;
+                            lblP4.setText(String.valueOf(p4));
+                            counter = counter - 2;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 5){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/tomatodo.png")));
+                        if (counter > 0){
+                            p4 = p4 + counter;
+                            lblP4.setText(String.valueOf(p4));
+                            counter = counter - counter;
+                            lblAcu.setText(String.valueOf(counter));
+                        }
+                    }else if (p == 6){
+                        lblPiri.setIcon(new ImageIcon(getClass().getResource("/icons/todospoen.png")));
+                        if (p1 >= 1){
+                            p1 = p1 - 1; 
+                            counter = counter + 1;
+                            lblP1.setText(String.valueOf(p1));
+                        }
+                        if (p2 >= 1){
+                            p2 = p2 - 1; 
+                            counter = counter + 1;
+                            lblP2.setText(String.valueOf(p2));
+                        }
+                        if (p3 >= 1){
+                            p3 = p3 - 1; 
+                            counter = counter + 1;
+                            lblP3.setText(String.valueOf(p3));
+                        }
+                        if (p4 >= 1){
+                            p4 = p4 - 1;
+                            counter = counter + 1;
+                            lblP4.setText(String.valueOf(p4));
+                        }
+                        lblAcu.setText(String.valueOf(counter));
+                    }
+                }else if(p4 <= 0){
+                    //lblP4.setIcon(new ImageIcon(getClass().getResource("/icons/gameover.png")));
+                    lblP4.setText("GAME OVER");
+                }    
+            }
+            if (p1 >= 1 && p2 <= 0 && p3 <= 0 && p4 <= 0){
+                lblWin.setText("Player 1");
+                //lblWin1.setIcon(new ImageIcon(getClass().getResource("/icons/campeon.png")));
+                i = 0;
+                btnPirinola.setText("Spin around -> Player #");
+                btnPirinola.setEnabled(false);
+            }else if (p2 >= 1 && p1 <= 0 && p3 <= 0 && p4 <= 0){
+                lblWin.setText("Player 2");
+                //lblWin1.setIcon(new ImageIcon(getClass().getResource("/icons/campeon.png")));
+                i = 0;
+                btnPirinola.setText("Spin around -> Player #");
+                btnPirinola.setEnabled(false);
+            }else if (p3 >= 1 && p1 <= 0 && p2 <= 0 && p4 <= 0){
+                lblWin.setText("Player 3");
+                //lblWin1.setIcon(new ImageIcon(getClass().getResource("/icons/campeon.png")));
+                i = 0;
+                btnPirinola.setText("Spin around -> Player #");
+                btnPirinola.setEnabled(false);
+            }else if (p4 >= 1 && p1 <= 0 && p2 <= 0 && p3 <= 0){
+                lblWin.setText("Player 4");
+                //lblWin1.setIcon(new ImageIcon(getClass().getResource("/icons/campeon.png")));
+                i = 0;
+                btnPirinola.setText("Spin around -> Player #");
+                btnPirinola.setEnabled(false);
+            }
+       
+    }//GEN-LAST:event_btnPirinolaActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         // TODO add your handling code here:
@@ -666,9 +684,9 @@ public class SpinningTop extends javax.swing.JFrame {
         lblP2.setText(String.valueOf(p2));
         lblP3.setText(String.valueOf(p3));
         lblP4.setText(String.valueOf(p4));
-        btnPiri.setText("Spin around -> Player 1");
+        btnPirinola.setText("Spin around -> Player 1");
 
-        btnPiri.setEnabled(true);
+        btnPirinola.setEnabled(true);
         btnReset.setEnabled(true);
         btnPlay.setEnabled(false);
     }//GEN-LAST:event_btnPlayActionPerformed
@@ -676,7 +694,7 @@ public class SpinningTop extends javax.swing.JFrame {
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
        //Reset botones
-        btnPiri.setEnabled(false);
+        btnPirinola.setEnabled(false);
         btnReset.setEnabled(false);
         btnPlay.setEnabled(true);
         //Reset labels
@@ -690,9 +708,12 @@ public class SpinningTop extends javax.swing.JFrame {
         lblP3.setText("0");
         lblP4.setText("0");
         lblAcu.setText("0");
-        btnPiri.setText("Spin around -> Player #");
+        btnPirinola.setText("Spin around -> Player #");
         lblWin.setText("?");
         lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/0.png")));
+        lblWin1.setText("?");
+        
+        
     }//GEN-LAST:event_btnResetActionPerformed
 
     /**
@@ -731,7 +752,7 @@ public class SpinningTop extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPiri;
+    private javax.swing.JButton btnPirinola;
     private javax.swing.JButton btnPlay;
     private javax.swing.JButton btnReset;
     private javax.swing.JComboBox<String> cmbPlay;
@@ -761,5 +782,6 @@ public class SpinningTop extends javax.swing.JFrame {
     private javax.swing.JLabel lblP4;
     private javax.swing.JLabel lblPiri;
     private javax.swing.JLabel lblWin;
+    private javax.swing.JLabel lblWin1;
     // End of variables declaration//GEN-END:variables
 }
