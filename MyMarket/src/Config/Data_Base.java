@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Config;
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -20,16 +16,17 @@ public class Data_Base {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://Localost:3306/mymarket",
+                    "jdbc:mysql://Localost/mymarket",
                     "root",
                     ""
             );
-            
-        }catch(Exception e ) {
-            System.out.println("");
+                System.out.println("::: Connection successfully :::");
+        } catch (Exception e) {
+            //Error messages
+            System.out.println("::: Connection Database error :::");
         }
-        
-    
 }
-    
+    public Connection getConnection() {
+        return conn;
+    } 
 }

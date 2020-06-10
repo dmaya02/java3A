@@ -216,7 +216,7 @@ public class NumberRace extends javax.swing.JFrame {
         jLabel4.setToolTipText("");
 
         cmb1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        cmb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cmb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
         cmb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmb1ActionPerformed(evt);
