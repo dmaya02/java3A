@@ -3,8 +3,8 @@ import javax.swing.ImageIcon;
 
 public class SpinningTop extends javax.swing.JFrame {
     
-    int i = 1, p1= 0, p2=0, p3=0, p4=0,C;
-    int counter;
+    int i = 1, p1= 0, p2=0, p3=0, p4=0,C,p=0;
+    int counter = 0;
 
     
     public SpinningTop() {
@@ -332,8 +332,8 @@ public class SpinningTop extends javax.swing.JFrame {
     private void btnPirinolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPirinolaActionPerformed
         // TODO add your handling code here:
         Random P = new Random();
-        int p = 0 ;
-        C = Integer.parseInt(cmbPlay.getSelectedItem().toString());
+        p = 0 ;
+                C = Integer.parseInt(cmbPlay.getSelectedItem().toString());
             if (i == 1){
                 i = i + 1;
                 if (p1 > 0){
@@ -702,6 +702,7 @@ public class SpinningTop extends javax.swing.JFrame {
         p2 = 0;
         p3 = 0;
         p4 = 0;
+        p = 0;
         counter = 0;
         lblP1.setText("0");
         lblP2.setText("0");
@@ -712,6 +713,11 @@ public class SpinningTop extends javax.swing.JFrame {
         lblWin.setText("?");
         lblPiri.setIcon(new ImageIcon(getClass().getResource("icons/0.png")));
         lblWin1.setText("?");
+        lblP4.setIcon(new ImageIcon(getClass().getResource("")));
+        //cmbPlay.set
+       
+        
+        
         
         
     }//GEN-LAST:event_btnResetActionPerformed
